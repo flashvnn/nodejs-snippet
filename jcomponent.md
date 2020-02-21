@@ -16,6 +16,7 @@ Example
 var obj = {'name': '', 'val': 10};
 
  setTimeout(()=>{
+ // SET for update object property
     SET('obj.name', 'Name 1!');
  }, 1000)
 
@@ -25,6 +26,7 @@ var obj = {'name': '', 'val': 10};
  }, 2000)
 
  setTimeout(()=>{
+ // UPDATE for update whole object
     obj.name = 'Name 3!';
     obj.val = 70;
     UPDATE('obj');
