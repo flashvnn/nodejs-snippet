@@ -59,3 +59,25 @@ Long define:
 <div data-jc="textbox" data-jc-path="form1.email" data-jc-config="placeholder:Email;icon2:envelope-o;required:true;type:email;" class='mb10'>Email</div>
 
 ```
+
+## Data scope
+
+```html
+<div data-scope="users.form">
+    <div data---="textbox__?.firstname">Name</div>
+    <div data---="textbox__?.age">Age</div>    
+</div>
+
+
+<div data-scope="PATH__OPTIONS__DEFAULT_VALUE">
+
+</div>
+
+EXAMPLE:
+
+<div data-scope="users.form__init:users_form_init__{}">
+    - method "users_form_init" will be evaluated if the scope will be initialized
+    - {} will be a default value for "users.form"
+</div>
+
+```
