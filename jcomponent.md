@@ -38,3 +38,24 @@ var obj = {'name': '', 'val': 10};
 </script>
 
 ```
+
+## Use exist jComponent
+
+
+```html
+<div data---="textbox__form1.firstname__required:true;placeholder:Имя;icon2:pencil;error:Please input name" class='mb10'>Name</div>
+
+```
+
+This is a short entry describing the component and its properties:
+
+`textbox`- name of the component, displays inputfor data entry  
+`form1.firstname` - the path to the property of the model, it is the value of this property that will change  
+`required:true;placeholder:Имя;icon2:pencil;error:Введите ваше имя` - component configuration and settings  
+`Name` - in this component will be displayed as a labeldescriptioninput  
+
+Long define:  
+```html
+<div data-jc="textbox" data-jc-path="form1.email" data-jc-config="placeholder:Email;icon2:envelope-o;required:true;type:email;" class='mb10'>Email</div>
+
+```
