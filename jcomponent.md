@@ -29,7 +29,7 @@ var obj = {'name': '', 'val': 10};
     obj.val = 70;
     UPDATE('obj');
  }, 3000)
- //изменение 4
+
  setTimeout(()=>{
     SET('obj.val',  120);
  }, 4000)
