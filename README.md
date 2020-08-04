@@ -1,6 +1,39 @@
 # nodejs-snippet
 Nodejs snippets for development
 
+
+
+## Nodejs application with shared hosting
+
+```
+ssh USERNAME@DOMAINNAME
+
+cd ~
+curl https://nodejs.org/dist/v10.16.3/node-v10.16.3-linux-x64.tar.gz | tar xz
+mv node-v10.16.3-linux-x64/ nodejs
+mkdir ~/bin
+cp nodejs/bin/node ~/bin
+cd ~/bin
+ln -s ../nodejs/lib/node_modules/npm/bin/npm-cli.js npm
+
+```
+
+Update .htaccess 
+```
+RewriteEngine On
+
+RewriteCond %{HTTP:Upgrade} websocket [NC]
+RewriteCond %{QUERY_STRING} transport=websocket [NC]
+RewriteRule ^(.*) ws://127.0.0.1:8000/$1 [P]
+
+RewriteRule ^$ http://127.0.0.1:8000/ [P,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ http://127.0.0.1:8000/$1 [P,L]
+
+
+```
+
 ## Static file extension
 
 JSON  
